@@ -1,11 +1,14 @@
 import React from 'react';
 import './App.css';
+import ProductList from './features/Product-list/ProductList';
 
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <>
+        <ProductList />
+      {/* <div className="App">
+      </div> */}
+    </>
   );
 }
 
