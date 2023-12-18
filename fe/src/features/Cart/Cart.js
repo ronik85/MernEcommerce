@@ -8,6 +8,7 @@ import {
 import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
+import { Link } from 'react-router-dom';
 
 export default function Cart() {
   const count = useSelector(selectCount);
@@ -48,6 +49,7 @@ export default function Cart() {
             Cart
           </h1>
           <div className="flow-root">
+            {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
             <ul role="list" className="-my-6 divide-y divide-gray-200">
               {products.map((product) => (
                 <li key={product.id} className="flex py-6">
@@ -70,16 +72,15 @@ export default function Cart() {
                       <p className="mt-1 text-sm text-gray-500">{product.color}</p>
                     </div>
                     <div className="flex flex-1 items-end justify-between text-sm">
-                      <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                        Qty
-                      </label>
-                      <select>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                      </select>
-
+                      <div className='text-gray-500'>
+                        <label htmlFor="email" className="inline text-sm mr-5 font-medium leading-6 text-gray-900">
+                          Qty
+                        </label>
+                        <select>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                        </select>
+                      </div>
                       <div className="flex">
                         <button
                           type="button"
@@ -113,14 +114,16 @@ export default function Cart() {
           <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
             <p>
               or
-              <button
-                type="button"
-                className="font-medium text-indigo-600 hover:text-indigo-500"
-                onClick={() => setOpen(false)}
-              >
-                Continue Shopping
-                <span aria-hidden="true"> &rarr;</span>
-              </button>
+              <Link to='/'>
+                <button
+                  type="button"
+                  className="font-medium text-indigo-600 hover:text-indigo-500"
+                  onClick={() => setOpen(false)}
+                >
+                  Continue Shopping
+                  <span aria-hidden="true"> &rarr;</span>
+                </button>
+              </Link>
             </p>
           </div>
         </div>
