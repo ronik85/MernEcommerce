@@ -1,12 +1,12 @@
-import React from 'react'
-import Login from '../features/Auth/components/Login'
+import React from "react";
+import Login from "../features/Auth/components/Login";
 
 function LoginPage() {
-    return (
-        <>
-            <Login />
-        </>
-    )
+  return (
+    <>
+      <Login />
+    </>
+  );
 }
 
-export default LoginPage
+export default LoginPage;
